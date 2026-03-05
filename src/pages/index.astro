@@ -1,0 +1,24 @@
+---
+import Layout from "../layouts/Layout.astro";
+import Header from "../components/Header.astro";
+import Hero from "../components/Hero.astro";
+import Rooms from "../components/Rooms.astro";
+import Experiences from "../components/Experiences.astro";
+import Testimonials from "../components/Testimonials.astro";
+import Footer from "../components/Footer.astro";
+---
+
+<Layout title="Inicio">
+	<Header />
+	<main class="w-full">
+		<Hero />
+
+		<!-- Spacer para acomodar el widget de reservas que sobresale del hero -->
+		<div class="h-32 md:h-24 w-full bg-white"></div>
+
+		<Rooms />
+		<Experiences />
+		<Testimonials />
+	</main>
+	<Footer />
+</Layout>

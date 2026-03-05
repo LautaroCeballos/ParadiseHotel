@@ -1,0 +1,49 @@
+---
+const testimonials = [
+  {
+    name: "Elena Rodríguez",
+    role: "Viajera Frecuente",
+    content: "Las instalaciones son de primer nivel. El spa me dejó completamente renovada. Definitivamente volveremos.",
+    avatar: "https://i.pravatar.cc/150?img=47"
+  },
+  {
+    name: "Carlos Mendoza",
+    role: "Luna de Miel",
+    content: "Nuestra estancia en la Oceanfront Suite fue espectacular. El servicio, las vistas y la comida son excelentes.",
+    avatar: "https://i.pravatar.cc/150?img=11"
+  },
+  {
+    name: "María Fernández",
+    role: "Vacaciones Familiares",
+    content: "Mis hijos disfrutaron las piscinas y nosotros pudimos descansar. Un ambiente muy seguro y hermoso.",
+    avatar: "https://i.pravatar.cc/150?img=32"
+  }
+];
+---
+<section id="testimonios" class="py-24 bg-white">
+  <div class="max-w-7xl mx-auto px-6">
+    <div class="text-center mb-16">
+      <span class="font-sans text-brand-accent uppercase tracking-widest text-sm font-bold block mb-3">Reseñas</span>
+      <h2 class="font-heading text-4xl md:text-5xl text-brand-dark font-bold">Lo que dicen de nosotros</h2>
+    </div>
+
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+      {testimonials.map((test) => (
+        <div class="bg-brand-light p-10 rounded-3xl relative">
+          <!-- Quote Icon -->
+          <div class="absolute -top-4 -left-4 bg-brand-accent text-white w-12 h-12 rounded-full flex items-center justify-center text-3xl font-serif shadow-lg">
+            "
+          </div>
+          <p class="font-sans text-slate-600 mb-8 italic">"{test.content}"</p>
+          <div class="flex items-center gap-4">
+            <img src={test.avatar} alt={test.name} class="w-14 h-14 rounded-full border-2 border-white shadow-sm" />
+            <div>
+              <h4 class="font-heading font-bold text-brand-dark">{test.name}</h4>
+              <span class="font-sans text-xs text-brand-accent font-semibold uppercase tracking-wider">{test.role}</span>
+            </div>
+          </div>
+        </div>
+      ))}
+    </div>
+  </div>
+</section>

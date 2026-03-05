@@ -1,0 +1,103 @@
+---
+const rooms = [
+    {
+        title: "Oceanfront Suite",
+        description:
+            "Despierta con el sonido de las olas. Nuestra suite más exclusiva con vista panorámica al mar, cama king-size y terraza privada.",
+        price: "$450",
+        image: "/images/room.png",
+        amenities: [
+            "Wi-Fi Alta Velocidad",
+            "Servicio Room 24/7",
+            "Mini bar Premium",
+            "Tina de hidromasaje",
+        ],
+    },
+    {
+        title: "Tropical Garden Villa",
+        description:
+            "Inmersa en la exuberante vegetación del resort, ofrece máxima privacidad con piscina propia y un diseño inspirado en la naturaleza.",
+        price: "$320",
+        image: "/images/spa.png",
+        amenities: [
+            "Piscina Privada",
+            "Cama King-size",
+            "Ducha al aire libre",
+            "Mayordomo",
+        ],
+    },
+];
+---
+
+<section id="habitaciones" class="py-24 bg-white">
+    <div class="max-w-7xl mx-auto px-6">
+        <div class="text-center mb-16">
+            <span
+                class="font-sans text-brand-accent uppercase tracking-widest text-sm font-bold block mb-3"
+                >Nuestras Estancias</span
+            >
+            <h2
+                class="font-heading text-4xl md:text-5xl text-brand-dark font-bold"
+            >
+                Un Descanso Sin Igual
+            </h2>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-12">
+            {
+                rooms.map((room) => (
+                    <div class="group bg-brand-light rounded-3xl overflow-hidden shadow-sm hover:shadow-2xl transition-all duration-500 border border-slate-100 flex flex-col">
+                        <div class="relative h-72 overflow-hidden">
+                            <img
+                                src={room.image}
+                                alt={room.title}
+                                class="w-full h-full object-cover transform group-hover:scale-105 transition-transform duration-700"
+                            />
+                            <div class="absolute top-4 right-4 bg-white/90 backdrop-blur-sm px-4 py-2 rounded-full shadow-sm">
+                                <span class="font-heading font-bold text-brand-dark">
+                                    {room.price}
+                                </span>
+                                <span class="font-sans text-sm text-slate-500">
+                                    /noche
+                                </span>
+                            </div>
+                        </div>
+                        <div class="p-8 flex flex-col flex-grow">
+                            <h3 class="font-heading text-2xl font-bold text-brand-dark mb-3 group-hover:text-brand-accent transition-colors">
+                                {room.title}
+                            </h3>
+                            <p class="font-sans text-slate-600 mb-6 flex-grow">
+                                {room.description}
+                            </p>
+
+                            <ul class="grid grid-cols-2 gap-3 mb-8">
+                                {room.amenities.map((amenity) => (
+                                    <li class="flex items-center text-sm font-sans text-slate-700">
+                                        <svg
+                                            class="w-5 h-5 text-brand-accent mr-2"
+                                            fill="none"
+                                            viewBox="0 0 24 24"
+                                            stroke="currentColor"
+                                        >
+                                            <path
+                                                stroke-linecap="round"
+                                                stroke-linejoin="round"
+                                                stroke-width="2"
+                                                d="M5 13l4 4L19 7"
+                                            />
+                                        </svg>
+                                        {amenity}
+                                    </li>
+                                ))}
+                            </ul>
+
+                            <button class="w-full bg-white border-2 border-brand-dark text-brand-dark hover:bg-brand-dark hover:text-white font-sans font-semibold py-3 rounded-xl transition-colors cursor-pointer">
+                                Ver Disponibilidad
+                            </button>
+                        </div>
+                    </div>
+                ))
+            }
+        </div>
+    </div>
+</section>
