@@ -6,6 +6,8 @@ import react from '@astrojs/react';
 
 // https://astro.build/config
 export default defineConfig({
+  site: 'https://LautaroCeballos.github.io',
+  base: '/ParadiseHotel',
   vite: {
     plugins: [tailwindcss()]
   },
